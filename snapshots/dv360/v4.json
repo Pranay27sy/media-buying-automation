@@ -1,0 +1,1650 @@
+{
+  "platform": "dv360",
+  "version": "v4",
+  "revision": "20260924",
+  "source": "https://displayvideo.googleapis.com/$discovery/rest?version=v4",
+  "entities": {
+    "Campaign": {
+      "advertiserId": {
+        "type": "string(int64)",
+        "read_only": true
+      },
+      "campaignBudgets": {
+        "type": "array<object>"
+      },
+      "campaignBudgets[].budgetAmountMicros": {
+        "type": "string(int64)",
+        "required": true
+      },
+      "campaignBudgets[].budgetId": {
+        "type": "string(int64)"
+      },
+      "campaignBudgets[].budgetUnit": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "BUDGET_UNIT_UNSPECIFIED",
+          "BUDGET_UNIT_CURRENCY",
+          "BUDGET_UNIT_IMPRESSIONS"
+        ]
+      },
+      "campaignBudgets[].dateRange": {
+        "type": "object",
+        "required": true
+      },
+      "campaignBudgets[].dateRange.endDate": {
+        "type": "object"
+      },
+      "campaignBudgets[].dateRange.endDate.day": {
+        "type": "integer(int32)"
+      },
+      "campaignBudgets[].dateRange.endDate.month": {
+        "type": "integer(int32)"
+      },
+      "campaignBudgets[].dateRange.endDate.year": {
+        "type": "integer(int32)"
+      },
+      "campaignBudgets[].dateRange.startDate": {
+        "type": "object"
+      },
+      "campaignBudgets[].dateRange.startDate.day": {
+        "type": "integer(int32)"
+      },
+      "campaignBudgets[].dateRange.startDate.month": {
+        "type": "integer(int32)"
+      },
+      "campaignBudgets[].dateRange.startDate.year": {
+        "type": "integer(int32)"
+      },
+      "campaignBudgets[].displayName": {
+        "type": "string",
+        "required": true
+      },
+      "campaignBudgets[].externalBudgetId": {
+        "type": "string"
+      },
+      "campaignBudgets[].externalBudgetSource": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "EXTERNAL_BUDGET_SOURCE_UNSPECIFIED",
+          "EXTERNAL_BUDGET_SOURCE_NONE",
+          "EXTERNAL_BUDGET_SOURCE_MEDIA_OCEAN"
+        ]
+      },
+      "campaignBudgets[].invoiceGroupingId": {
+        "type": "string"
+      },
+      "campaignBudgets[].prismaConfig": {
+        "type": "object"
+      },
+      "campaignBudgets[].prismaConfig.prismaCpeCode": {
+        "type": "object",
+        "required": true
+      },
+      "campaignBudgets[].prismaConfig.prismaCpeCode.prismaClientCode": {
+        "type": "string"
+      },
+      "campaignBudgets[].prismaConfig.prismaCpeCode.prismaEstimateCode": {
+        "type": "string"
+      },
+      "campaignBudgets[].prismaConfig.prismaCpeCode.prismaProductCode": {
+        "type": "string"
+      },
+      "campaignBudgets[].prismaConfig.prismaType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "PRISMA_TYPE_UNSPECIFIED",
+          "PRISMA_TYPE_DISPLAY",
+          "PRISMA_TYPE_SEARCH",
+          "PRISMA_TYPE_VIDEO",
+          "PRISMA_TYPE_AUDIO",
+          "PRISMA_TYPE_SOCIAL",
+          "PRISMA_TYPE_FEE"
+        ]
+      },
+      "campaignBudgets[].prismaConfig.supplier": {
+        "type": "string",
+        "required": true
+      },
+      "campaignFlight": {
+        "type": "object",
+        "required": true
+      },
+      "campaignFlight.plannedDates": {
+        "type": "object",
+        "required": true
+      },
+      "campaignFlight.plannedDates.endDate": {
+        "type": "object"
+      },
+      "campaignFlight.plannedDates.endDate.day": {
+        "type": "integer(int32)"
+      },
+      "campaignFlight.plannedDates.endDate.month": {
+        "type": "integer(int32)"
+      },
+      "campaignFlight.plannedDates.endDate.year": {
+        "type": "integer(int32)"
+      },
+      "campaignFlight.plannedDates.startDate": {
+        "type": "object"
+      },
+      "campaignFlight.plannedDates.startDate.day": {
+        "type": "integer(int32)"
+      },
+      "campaignFlight.plannedDates.startDate.month": {
+        "type": "integer(int32)"
+      },
+      "campaignFlight.plannedDates.startDate.year": {
+        "type": "integer(int32)"
+      },
+      "campaignFlight.plannedSpendAmountMicros": {
+        "type": "string(int64)"
+      },
+      "campaignGoal": {
+        "type": "object",
+        "required": true
+      },
+      "campaignGoal.campaignGoalType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "CAMPAIGN_GOAL_TYPE_UNSPECIFIED",
+          "CAMPAIGN_GOAL_TYPE_APP_INSTALL",
+          "CAMPAIGN_GOAL_TYPE_BRAND_AWARENESS",
+          "CAMPAIGN_GOAL_TYPE_OFFLINE_ACTION",
+          "CAMPAIGN_GOAL_TYPE_ONLINE_ACTION"
+        ]
+      },
+      "campaignGoal.performanceGoal": {
+        "type": "object",
+        "required": true
+      },
+      "campaignGoal.performanceGoal.performanceGoalAmountMicros": {
+        "type": "string(int64)"
+      },
+      "campaignGoal.performanceGoal.performanceGoalPercentageMicros": {
+        "type": "string(int64)"
+      },
+      "campaignGoal.performanceGoal.performanceGoalString": {
+        "type": "string"
+      },
+      "campaignGoal.performanceGoal.performanceGoalType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "PERFORMANCE_GOAL_TYPE_UNSPECIFIED",
+          "PERFORMANCE_GOAL_TYPE_CPM",
+          "PERFORMANCE_GOAL_TYPE_CPC",
+          "PERFORMANCE_GOAL_TYPE_CPA",
+          "PERFORMANCE_GOAL_TYPE_CTR",
+          "PERFORMANCE_GOAL_TYPE_VIEWABILITY",
+          "PERFORMANCE_GOAL_TYPE_CPIAVC",
+          "PERFORMANCE_GOAL_TYPE_CPE",
+          "PERFORMANCE_GOAL_TYPE_CPV",
+          "PERFORMANCE_GOAL_TYPE_CLICK_CVR",
+          "PERFORMANCE_GOAL_TYPE_IMPRESSION_CVR",
+          "PERFORMANCE_GOAL_TYPE_VCPM",
+          "PERFORMANCE_GOAL_TYPE_VTR",
+          "PERFORMANCE_GOAL_TYPE_AUDIO_COMPLETION_RATE",
+          "PERFORMANCE_GOAL_TYPE_VIDEO_COMPLETION_RATE",
+          "PERFORMANCE_GOAL_TYPE_OTHER"
+        ]
+      },
+      "campaignId": {
+        "type": "string(int64)",
+        "read_only": true
+      },
+      "displayName": {
+        "type": "string",
+        "required": true
+      },
+      "entityStatus": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "ENTITY_STATUS_UNSPECIFIED",
+          "ENTITY_STATUS_ACTIVE",
+          "ENTITY_STATUS_ARCHIVED",
+          "ENTITY_STATUS_DRAFT",
+          "ENTITY_STATUS_PAUSED",
+          "ENTITY_STATUS_SCHEDULED_FOR_DELETION"
+        ]
+      },
+      "frequencyCap": {
+        "type": "object",
+        "required": true
+      },
+      "frequencyCap.maxImpressions": {
+        "type": "integer(int32)"
+      },
+      "frequencyCap.maxViews": {
+        "type": "integer(int32)"
+      },
+      "frequencyCap.timeUnit": {
+        "type": "string",
+        "enum": [
+          "TIME_UNIT_UNSPECIFIED",
+          "TIME_UNIT_LIFETIME",
+          "TIME_UNIT_MONTHS",
+          "TIME_UNIT_WEEKS",
+          "TIME_UNIT_DAYS",
+          "TIME_UNIT_HOURS",
+          "TIME_UNIT_MINUTES"
+        ],
+        "enum_deprecated": [
+          "TIME_UNIT_LIFETIME"
+        ]
+      },
+      "frequencyCap.timeUnitCount": {
+        "type": "integer(int32)"
+      },
+      "frequencyCap.unlimited": {
+        "type": "boolean"
+      },
+      "name": {
+        "type": "string",
+        "read_only": true
+      },
+      "updateTime": {
+        "type": "string(google-datetime)",
+        "read_only": true
+      }
+    },
+    "InsertionOrder": {
+      "advertiserId": {
+        "type": "string(int64)",
+        "read_only": true
+      },
+      "bidStrategy": {
+        "type": "object"
+      },
+      "bidStrategy.demandGenBid": {
+        "type": "object"
+      },
+      "bidStrategy.demandGenBid.effectiveBiddingValue": {
+        "type": "string(int64)",
+        "read_only": true
+      },
+      "bidStrategy.demandGenBid.effectiveBiddingValueSource": {
+        "type": "string",
+        "read_only": true,
+        "enum": [
+          "BIDDING_SOURCE_UNSPECIFIED",
+          "BIDDING_SOURCE_LINE_ITEM",
+          "BIDDING_SOURCE_AD_GROUP"
+        ]
+      },
+      "bidStrategy.demandGenBid.type": {
+        "type": "string",
+        "enum": [
+          "DEMAND_GEN_BIDDING_STRATEGY_TYPE_UNSPECIFIED",
+          "DEMAND_GEN_BIDDING_STRATEGY_TYPE_TARGET_CPA",
+          "DEMAND_GEN_BIDDING_STRATEGY_TYPE_TARGET_ROAS",
+          "DEMAND_GEN_BIDDING_STRATEGY_TYPE_MAXIMIZE_CONVERSIONS",
+          "DEMAND_GEN_BIDDING_STRATEGY_TYPE_MAXIMIZE_CONVERSION_VALUE",
+          "DEMAND_GEN_BIDDING_STRATEGY_TYPE_MAXIMIZE_CLICKS",
+          "DEMAND_GEN_BIDDING_STRATEGY_TYPE_TARGET_CPC"
+        ]
+      },
+      "bidStrategy.demandGenBid.value": {
+        "type": "string(int64)"
+      },
+      "bidStrategy.fixedBid": {
+        "type": "object"
+      },
+      "bidStrategy.fixedBid.bidAmountMicros": {
+        "type": "string(int64)"
+      },
+      "bidStrategy.maximizeSpendAutoBid": {
+        "type": "object"
+      },
+      "bidStrategy.maximizeSpendAutoBid.customBiddingAlgorithmId": {
+        "type": "string(int64)"
+      },
+      "bidStrategy.maximizeSpendAutoBid.maxAverageCpmBidAmountMicros": {
+        "type": "string(int64)"
+      },
+      "bidStrategy.maximizeSpendAutoBid.performanceGoalType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_UNSPECIFIED",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CPA",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CPC",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_VIEWABLE_CPM",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CUSTOM_ALGO",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CIVA",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_IVO_TEN",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_AV_VIEWED",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_REACH"
+        ]
+      },
+      "bidStrategy.maximizeSpendAutoBid.raiseBidForDeals": {
+        "type": "boolean"
+      },
+      "bidStrategy.performanceGoalAutoBid": {
+        "type": "object"
+      },
+      "bidStrategy.performanceGoalAutoBid.customBiddingAlgorithmId": {
+        "type": "string(int64)"
+      },
+      "bidStrategy.performanceGoalAutoBid.maxAverageCpmBidAmountMicros": {
+        "type": "string(int64)"
+      },
+      "bidStrategy.performanceGoalAutoBid.performanceGoalAmountMicros": {
+        "type": "string(int64)",
+        "required": true
+      },
+      "bidStrategy.performanceGoalAutoBid.performanceGoalType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_UNSPECIFIED",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CPA",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CPC",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_VIEWABLE_CPM",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CUSTOM_ALGO",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CIVA",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_IVO_TEN",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_AV_VIEWED",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_REACH"
+        ]
+      },
+      "bidStrategy.youtubeAndPartnersBid": {
+        "type": "object"
+      },
+      "bidStrategy.youtubeAndPartnersBid.adGroupEffectiveTargetCpaSource": {
+        "type": "string",
+        "read_only": true,
+        "enum": [
+          "BIDDING_SOURCE_UNSPECIFIED",
+          "BIDDING_SOURCE_LINE_ITEM",
+          "BIDDING_SOURCE_AD_GROUP"
+        ]
+      },
+      "bidStrategy.youtubeAndPartnersBid.adGroupEffectiveTargetCpaValue": {
+        "type": "string(int64)",
+        "read_only": true
+      },
+      "bidStrategy.youtubeAndPartnersBid.type": {
+        "type": "string",
+        "enum": [
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_UNSPECIFIED",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_MANUAL_CPV",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_MANUAL_CPM",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_TARGET_CPA",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_TARGET_CPM",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_RESERVE_CPM",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_MAXIMIZE_LIFT",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_MAXIMIZE_CONVERSIONS",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_TARGET_CPV",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_TARGET_ROAS",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_MAXIMIZE_CONVERSION_VALUE"
+        ]
+      },
+      "bidStrategy.youtubeAndPartnersBid.value": {
+        "type": "string(int64)"
+      },
+      "budget": {
+        "type": "object",
+        "required": true
+      },
+      "budget.automationType": {
+        "type": "string",
+        "enum": [
+          "INSERTION_ORDER_AUTOMATION_TYPE_UNSPECIFIED",
+          "INSERTION_ORDER_AUTOMATION_TYPE_BUDGET",
+          "INSERTION_ORDER_AUTOMATION_TYPE_NONE",
+          "INSERTION_ORDER_AUTOMATION_TYPE_BID_BUDGET"
+        ]
+      },
+      "budget.budgetSegments": {
+        "type": "array<object>",
+        "required": true
+      },
+      "budget.budgetSegments[].budgetAmountMicros": {
+        "type": "string(int64)",
+        "required": true
+      },
+      "budget.budgetSegments[].campaignBudgetId": {
+        "type": "string(int64)"
+      },
+      "budget.budgetSegments[].dateRange": {
+        "type": "object",
+        "required": true
+      },
+      "budget.budgetSegments[].dateRange.endDate": {
+        "type": "object"
+      },
+      "budget.budgetSegments[].dateRange.endDate.day": {
+        "type": "integer(int32)"
+      },
+      "budget.budgetSegments[].dateRange.endDate.month": {
+        "type": "integer(int32)"
+      },
+      "budget.budgetSegments[].dateRange.endDate.year": {
+        "type": "integer(int32)"
+      },
+      "budget.budgetSegments[].dateRange.startDate": {
+        "type": "object"
+      },
+      "budget.budgetSegments[].dateRange.startDate.day": {
+        "type": "integer(int32)"
+      },
+      "budget.budgetSegments[].dateRange.startDate.month": {
+        "type": "integer(int32)"
+      },
+      "budget.budgetSegments[].dateRange.startDate.year": {
+        "type": "integer(int32)"
+      },
+      "budget.budgetSegments[].description": {
+        "type": "string"
+      },
+      "budget.budgetUnit": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "BUDGET_UNIT_UNSPECIFIED",
+          "BUDGET_UNIT_CURRENCY",
+          "BUDGET_UNIT_IMPRESSIONS"
+        ]
+      },
+      "campaignId": {
+        "type": "string(int64)",
+        "required": true
+      },
+      "displayName": {
+        "type": "string",
+        "required": true
+      },
+      "entityStatus": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "ENTITY_STATUS_UNSPECIFIED",
+          "ENTITY_STATUS_ACTIVE",
+          "ENTITY_STATUS_ARCHIVED",
+          "ENTITY_STATUS_DRAFT",
+          "ENTITY_STATUS_PAUSED",
+          "ENTITY_STATUS_SCHEDULED_FOR_DELETION"
+        ]
+      },
+      "frequencyCap": {
+        "type": "object",
+        "required": true
+      },
+      "frequencyCap.maxImpressions": {
+        "type": "integer(int32)"
+      },
+      "frequencyCap.maxViews": {
+        "type": "integer(int32)"
+      },
+      "frequencyCap.timeUnit": {
+        "type": "string",
+        "enum": [
+          "TIME_UNIT_UNSPECIFIED",
+          "TIME_UNIT_LIFETIME",
+          "TIME_UNIT_MONTHS",
+          "TIME_UNIT_WEEKS",
+          "TIME_UNIT_DAYS",
+          "TIME_UNIT_HOURS",
+          "TIME_UNIT_MINUTES"
+        ],
+        "enum_deprecated": [
+          "TIME_UNIT_LIFETIME"
+        ]
+      },
+      "frequencyCap.timeUnitCount": {
+        "type": "integer(int32)"
+      },
+      "frequencyCap.unlimited": {
+        "type": "boolean"
+      },
+      "insertionOrderId": {
+        "type": "string(int64)",
+        "read_only": true
+      },
+      "insertionOrderType": {
+        "type": "string",
+        "enum": [
+          "INSERTION_ORDER_TYPE_UNSPECIFIED",
+          "RTB",
+          "OVER_THE_TOP"
+        ]
+      },
+      "integrationDetails": {
+        "type": "object"
+      },
+      "integrationDetails.details": {
+        "type": "string"
+      },
+      "integrationDetails.integrationCode": {
+        "type": "string"
+      },
+      "kpi": {
+        "type": "object",
+        "required": true
+      },
+      "kpi.kpiAlgorithmId": {
+        "type": "string(int64)"
+      },
+      "kpi.kpiAmountMicros": {
+        "type": "string(int64)"
+      },
+      "kpi.kpiPercentageMicros": {
+        "type": "string(int64)"
+      },
+      "kpi.kpiString": {
+        "type": "string"
+      },
+      "kpi.kpiType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "KPI_TYPE_UNSPECIFIED",
+          "KPI_TYPE_CPM",
+          "KPI_TYPE_CPC",
+          "KPI_TYPE_CPA",
+          "KPI_TYPE_CTR",
+          "KPI_TYPE_VIEWABILITY",
+          "KPI_TYPE_CPIAVC",
+          "KPI_TYPE_CPE",
+          "KPI_TYPE_CPV",
+          "KPI_TYPE_CLICK_CVR",
+          "KPI_TYPE_IMPRESSION_CVR",
+          "KPI_TYPE_VCPM",
+          "KPI_TYPE_VTR",
+          "KPI_TYPE_AUDIO_COMPLETION_RATE",
+          "KPI_TYPE_VIDEO_COMPLETION_RATE",
+          "KPI_TYPE_CPCL",
+          "KPI_TYPE_CPCV",
+          "KPI_TYPE_TOS10",
+          "KPI_TYPE_MAXIMIZE_PACING",
+          "KPI_TYPE_CUSTOM_IMPRESSION_VALUE_OVER_COST",
+          "KPI_TYPE_OTHER"
+        ]
+      },
+      "name": {
+        "type": "string",
+        "read_only": true
+      },
+      "optimizationObjective": {
+        "type": "string",
+        "enum": [
+          "OPTIMIZATION_OBJECTIVE_UNSPECIFIED",
+          "CONVERSION",
+          "CLICK",
+          "BRAND_AWARENESS",
+          "CUSTOM",
+          "NO_OBJECTIVE"
+        ]
+      },
+      "pacing": {
+        "type": "object",
+        "required": true
+      },
+      "pacing.dailyMaxImpressions": {
+        "type": "string(int64)"
+      },
+      "pacing.dailyMaxMicros": {
+        "type": "string(int64)"
+      },
+      "pacing.pacingPeriod": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "PACING_PERIOD_UNSPECIFIED",
+          "PACING_PERIOD_DAILY",
+          "PACING_PERIOD_FLIGHT"
+        ]
+      },
+      "pacing.pacingType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "PACING_TYPE_UNSPECIFIED",
+          "PACING_TYPE_AHEAD",
+          "PACING_TYPE_ASAP",
+          "PACING_TYPE_EVEN"
+        ]
+      },
+      "partnerCosts": {
+        "type": "array<object>"
+      },
+      "partnerCosts[].costType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "PARTNER_COST_TYPE_UNSPECIFIED",
+          "PARTNER_COST_TYPE_ADLOOX",
+          "PARTNER_COST_TYPE_ADLOOX_PREBID",
+          "PARTNER_COST_TYPE_ADSAFE",
+          "PARTNER_COST_TYPE_ADXPOSE",
+          "PARTNER_COST_TYPE_AGGREGATE_KNOWLEDGE",
+          "PARTNER_COST_TYPE_AGENCY_TRADING_DESK",
+          "PARTNER_COST_TYPE_DV360_FEE",
+          "PARTNER_COST_TYPE_COMSCORE_VCE",
+          "PARTNER_COST_TYPE_DATA_MANAGEMENT_PLATFORM",
+          "PARTNER_COST_TYPE_DEFAULT",
+          "PARTNER_COST_TYPE_DOUBLE_VERIFY",
+          "PARTNER_COST_TYPE_DOUBLE_VERIFY_PREBID",
+          "PARTNER_COST_TYPE_EVIDON",
+          "PARTNER_COST_TYPE_INTEGRAL_AD_SCIENCE_VIDEO",
+          "PARTNER_COST_TYPE_INTEGRAL_AD_SCIENCE_PREBID",
+          "PARTNER_COST_TYPE_MEDIA_COST_DATA",
+          "PARTNER_COST_TYPE_MOAT_VIDEO",
+          "PARTNER_COST_TYPE_NIELSEN_DAR",
+          "PARTNER_COST_TYPE_SHOP_LOCAL",
+          "PARTNER_COST_TYPE_TERACENT",
+          "PARTNER_COST_TYPE_THIRD_PARTY_AD_SERVER",
+          "PARTNER_COST_TYPE_TRUST_METRICS",
+          "PARTNER_COST_TYPE_VIZU",
+          "PARTNER_COST_TYPE_CUSTOM_FEE_1",
+          "PARTNER_COST_TYPE_CUSTOM_FEE_2",
+          "PARTNER_COST_TYPE_CUSTOM_FEE_3",
+          "PARTNER_COST_TYPE_CUSTOM_FEE_4",
+          "PARTNER_COST_TYPE_CUSTOM_FEE_5",
+          "PARTNER_COST_TYPE_SCIBIDS_FEE"
+        ]
+      },
+      "partnerCosts[].feeAmount": {
+        "type": "string(int64)"
+      },
+      "partnerCosts[].feePercentageMillis": {
+        "type": "string(int64)"
+      },
+      "partnerCosts[].feeType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "PARTNER_COST_FEE_TYPE_UNSPECIFIED",
+          "PARTNER_COST_FEE_TYPE_CPM_FEE",
+          "PARTNER_COST_FEE_TYPE_MEDIA_FEE"
+        ]
+      },
+      "partnerCosts[].invoiceType": {
+        "type": "string",
+        "enum": [
+          "PARTNER_COST_INVOICE_TYPE_UNSPECIFIED",
+          "PARTNER_COST_INVOICE_TYPE_DV360",
+          "PARTNER_COST_INVOICE_TYPE_PARTNER"
+        ]
+      },
+      "reservationType": {
+        "type": "string",
+        "read_only": true,
+        "enum": [
+          "RESERVATION_TYPE_UNSPECIFIED",
+          "RESERVATION_TYPE_NOT_GUARANTEED",
+          "RESERVATION_TYPE_PROGRAMMATIC_GUARANTEED",
+          "RESERVATION_TYPE_TAG_GUARANTEED",
+          "RESERVATION_TYPE_PETRA_VIRAL",
+          "RESERVATION_TYPE_INSTANT_RESERVE"
+        ]
+      },
+      "updateTime": {
+        "type": "string(google-datetime)",
+        "read_only": true
+      }
+    },
+    "LineItem": {
+      "advertiserId": {
+        "type": "string(int64)",
+        "read_only": true
+      },
+      "bidStrategy": {
+        "type": "object",
+        "required": true
+      },
+      "bidStrategy.demandGenBid": {
+        "type": "object"
+      },
+      "bidStrategy.demandGenBid.effectiveBiddingValue": {
+        "type": "string(int64)",
+        "read_only": true
+      },
+      "bidStrategy.demandGenBid.effectiveBiddingValueSource": {
+        "type": "string",
+        "read_only": true,
+        "enum": [
+          "BIDDING_SOURCE_UNSPECIFIED",
+          "BIDDING_SOURCE_LINE_ITEM",
+          "BIDDING_SOURCE_AD_GROUP"
+        ]
+      },
+      "bidStrategy.demandGenBid.type": {
+        "type": "string",
+        "enum": [
+          "DEMAND_GEN_BIDDING_STRATEGY_TYPE_UNSPECIFIED",
+          "DEMAND_GEN_BIDDING_STRATEGY_TYPE_TARGET_CPA",
+          "DEMAND_GEN_BIDDING_STRATEGY_TYPE_TARGET_ROAS",
+          "DEMAND_GEN_BIDDING_STRATEGY_TYPE_MAXIMIZE_CONVERSIONS",
+          "DEMAND_GEN_BIDDING_STRATEGY_TYPE_MAXIMIZE_CONVERSION_VALUE",
+          "DEMAND_GEN_BIDDING_STRATEGY_TYPE_MAXIMIZE_CLICKS",
+          "DEMAND_GEN_BIDDING_STRATEGY_TYPE_TARGET_CPC"
+        ]
+      },
+      "bidStrategy.demandGenBid.value": {
+        "type": "string(int64)"
+      },
+      "bidStrategy.fixedBid": {
+        "type": "object"
+      },
+      "bidStrategy.fixedBid.bidAmountMicros": {
+        "type": "string(int64)"
+      },
+      "bidStrategy.maximizeSpendAutoBid": {
+        "type": "object"
+      },
+      "bidStrategy.maximizeSpendAutoBid.customBiddingAlgorithmId": {
+        "type": "string(int64)"
+      },
+      "bidStrategy.maximizeSpendAutoBid.maxAverageCpmBidAmountMicros": {
+        "type": "string(int64)"
+      },
+      "bidStrategy.maximizeSpendAutoBid.performanceGoalType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_UNSPECIFIED",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CPA",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CPC",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_VIEWABLE_CPM",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CUSTOM_ALGO",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CIVA",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_IVO_TEN",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_AV_VIEWED",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_REACH"
+        ]
+      },
+      "bidStrategy.maximizeSpendAutoBid.raiseBidForDeals": {
+        "type": "boolean"
+      },
+      "bidStrategy.performanceGoalAutoBid": {
+        "type": "object"
+      },
+      "bidStrategy.performanceGoalAutoBid.customBiddingAlgorithmId": {
+        "type": "string(int64)"
+      },
+      "bidStrategy.performanceGoalAutoBid.maxAverageCpmBidAmountMicros": {
+        "type": "string(int64)"
+      },
+      "bidStrategy.performanceGoalAutoBid.performanceGoalAmountMicros": {
+        "type": "string(int64)",
+        "required": true
+      },
+      "bidStrategy.performanceGoalAutoBid.performanceGoalType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_UNSPECIFIED",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CPA",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CPC",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_VIEWABLE_CPM",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CUSTOM_ALGO",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CIVA",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_IVO_TEN",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_AV_VIEWED",
+          "BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_REACH"
+        ]
+      },
+      "bidStrategy.youtubeAndPartnersBid": {
+        "type": "object"
+      },
+      "bidStrategy.youtubeAndPartnersBid.adGroupEffectiveTargetCpaSource": {
+        "type": "string",
+        "read_only": true,
+        "enum": [
+          "BIDDING_SOURCE_UNSPECIFIED",
+          "BIDDING_SOURCE_LINE_ITEM",
+          "BIDDING_SOURCE_AD_GROUP"
+        ]
+      },
+      "bidStrategy.youtubeAndPartnersBid.adGroupEffectiveTargetCpaValue": {
+        "type": "string(int64)",
+        "read_only": true
+      },
+      "bidStrategy.youtubeAndPartnersBid.type": {
+        "type": "string",
+        "enum": [
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_UNSPECIFIED",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_MANUAL_CPV",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_MANUAL_CPM",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_TARGET_CPA",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_TARGET_CPM",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_RESERVE_CPM",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_MAXIMIZE_LIFT",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_MAXIMIZE_CONVERSIONS",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_TARGET_CPV",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_TARGET_ROAS",
+          "YOUTUBE_AND_PARTNERS_BIDDING_STRATEGY_TYPE_MAXIMIZE_CONVERSION_VALUE"
+        ]
+      },
+      "bidStrategy.youtubeAndPartnersBid.value": {
+        "type": "string(int64)"
+      },
+      "budget": {
+        "type": "object",
+        "required": true
+      },
+      "budget.budgetAllocationType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "LINE_ITEM_BUDGET_ALLOCATION_TYPE_UNSPECIFIED",
+          "LINE_ITEM_BUDGET_ALLOCATION_TYPE_AUTOMATIC",
+          "LINE_ITEM_BUDGET_ALLOCATION_TYPE_FIXED",
+          "LINE_ITEM_BUDGET_ALLOCATION_TYPE_UNLIMITED"
+        ]
+      },
+      "budget.budgetUnit": {
+        "type": "string",
+        "read_only": true,
+        "enum": [
+          "BUDGET_UNIT_UNSPECIFIED",
+          "BUDGET_UNIT_CURRENCY",
+          "BUDGET_UNIT_IMPRESSIONS"
+        ]
+      },
+      "budget.maxAmount": {
+        "type": "string(int64)"
+      },
+      "campaignId": {
+        "type": "string(int64)",
+        "read_only": true
+      },
+      "containsEuPoliticalAds": {
+        "type": "string",
+        "enum": [
+          "EU_POLITICAL_ADVERTISING_STATUS_UNKNOWN",
+          "CONTAINS_EU_POLITICAL_ADVERTISING",
+          "DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING"
+        ]
+      },
+      "conversionCounting": {
+        "type": "object"
+      },
+      "conversionCounting.floodlightActivityConfigs": {
+        "type": "array<object>"
+      },
+      "conversionCounting.floodlightActivityConfigs[].floodlightActivityId": {
+        "type": "string(int64)",
+        "required": true
+      },
+      "conversionCounting.floodlightActivityConfigs[].postClickLookbackWindowDays": {
+        "type": "integer(int32)",
+        "required": true
+      },
+      "conversionCounting.floodlightActivityConfigs[].postViewLookbackWindowDays": {
+        "type": "integer(int32)",
+        "required": true
+      },
+      "conversionCounting.postViewCountPercentageMillis": {
+        "type": "string(int64)"
+      },
+      "conversionCounting.primaryAttributionModelId": {
+        "type": "string(int64)"
+      },
+      "creativeIds": {
+        "type": "array<string(int64)>"
+      },
+      "demandGenSettings": {
+        "type": "object"
+      },
+      "demandGenSettings.geoLanguageTargetingEnabled": {
+        "type": "boolean"
+      },
+      "demandGenSettings.linkedMerchantId": {
+        "type": "string(int64)"
+      },
+      "demandGenSettings.thirdPartyMeasurementConfigs": {
+        "type": "object"
+      },
+      "demandGenSettings.thirdPartyMeasurementConfigs.brandLiftVendorConfigs": {
+        "type": "array<object>"
+      },
+      "demandGenSettings.thirdPartyMeasurementConfigs.brandLiftVendorConfigs[].placementId": {
+        "type": "string"
+      },
+      "demandGenSettings.thirdPartyMeasurementConfigs.brandLiftVendorConfigs[].vendor": {
+        "type": "string",
+        "enum": [
+          "THIRD_PARTY_VENDOR_UNSPECIFIED",
+          "THIRD_PARTY_VENDOR_MOAT",
+          "THIRD_PARTY_VENDOR_DOUBLE_VERIFY",
+          "THIRD_PARTY_VENDOR_INTEGRAL_AD_SCIENCE",
+          "THIRD_PARTY_VENDOR_COMSCORE",
+          "THIRD_PARTY_VENDOR_TELEMETRY",
+          "THIRD_PARTY_VENDOR_MEETRICS",
+          "THIRD_PARTY_VENDOR_ZEFR",
+          "THIRD_PARTY_VENDOR_NIELSEN",
+          "THIRD_PARTY_VENDOR_KANTAR",
+          "THIRD_PARTY_VENDOR_DYNATA",
+          "THIRD_PARTY_VENDOR_TRANSUNION",
+          "THIRD_PARTY_VENDOR_ORIGIN",
+          "THIRD_PARTY_VENDOR_GEMIUS",
+          "THIRD_PARTY_VENDOR_MEDIA_SCOPE",
+          "THIRD_PARTY_VENDOR_AUDIENCE_PROJECT",
+          "THIRD_PARTY_VENDOR_VIDEO_AMP",
+          "THIRD_PARTY_VENDOR_ISPOT_TV",
+          "THIRD_PARTY_VENDOR_INTAGE",
+          "THIRD_PARTY_VENDOR_MACROMILL",
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+        ]
+      },
+      "demandGenSettings.thirdPartyMeasurementConfigs.brandSafetyVendorConfigs": {
+        "type": "array<object>"
+      },
+      "demandGenSettings.thirdPartyMeasurementConfigs.brandSafetyVendorConfigs[].placementId": {
+        "type": "string"
+      },
+      "demandGenSettings.thirdPartyMeasurementConfigs.brandSafetyVendorConfigs[].vendor": {
+        "type": "string",
+        "enum": [
+          "THIRD_PARTY_VENDOR_UNSPECIFIED",
+          "THIRD_PARTY_VENDOR_MOAT",
+          "THIRD_PARTY_VENDOR_DOUBLE_VERIFY",
+          "THIRD_PARTY_VENDOR_INTEGRAL_AD_SCIENCE",
+          "THIRD_PARTY_VENDOR_COMSCORE",
+          "THIRD_PARTY_VENDOR_TELEMETRY",
+          "THIRD_PARTY_VENDOR_MEETRICS",
+          "THIRD_PARTY_VENDOR_ZEFR",
+          "THIRD_PARTY_VENDOR_NIELSEN",
+          "THIRD_PARTY_VENDOR_KANTAR",
+          "THIRD_PARTY_VENDOR_DYNATA",
+          "THIRD_PARTY_VENDOR_TRANSUNION",
+          "THIRD_PARTY_VENDOR_ORIGIN",
+          "THIRD_PARTY_VENDOR_GEMIUS",
+          "THIRD_PARTY_VENDOR_MEDIA_SCOPE",
+          "THIRD_PARTY_VENDOR_AUDIENCE_PROJECT",
+          "THIRD_PARTY_VENDOR_VIDEO_AMP",
+          "THIRD_PARTY_VENDOR_ISPOT_TV",
+          "THIRD_PARTY_VENDOR_INTAGE",
+          "THIRD_PARTY_VENDOR_MACROMILL",
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+        ]
+      },
+      "demandGenSettings.thirdPartyMeasurementConfigs.reachVendorConfigs": {
+        "type": "array<object>"
+      },
+      "demandGenSettings.thirdPartyMeasurementConfigs.reachVendorConfigs[].placementId": {
+        "type": "string"
+      },
+      "demandGenSettings.thirdPartyMeasurementConfigs.reachVendorConfigs[].vendor": {
+        "type": "string",
+        "enum": [
+          "THIRD_PARTY_VENDOR_UNSPECIFIED",
+          "THIRD_PARTY_VENDOR_MOAT",
+          "THIRD_PARTY_VENDOR_DOUBLE_VERIFY",
+          "THIRD_PARTY_VENDOR_INTEGRAL_AD_SCIENCE",
+          "THIRD_PARTY_VENDOR_COMSCORE",
+          "THIRD_PARTY_VENDOR_TELEMETRY",
+          "THIRD_PARTY_VENDOR_MEETRICS",
+          "THIRD_PARTY_VENDOR_ZEFR",
+          "THIRD_PARTY_VENDOR_NIELSEN",
+          "THIRD_PARTY_VENDOR_KANTAR",
+          "THIRD_PARTY_VENDOR_DYNATA",
+          "THIRD_PARTY_VENDOR_TRANSUNION",
+          "THIRD_PARTY_VENDOR_ORIGIN",
+          "THIRD_PARTY_VENDOR_GEMIUS",
+          "THIRD_PARTY_VENDOR_MEDIA_SCOPE",
+          "THIRD_PARTY_VENDOR_AUDIENCE_PROJECT",
+          "THIRD_PARTY_VENDOR_VIDEO_AMP",
+          "THIRD_PARTY_VENDOR_ISPOT_TV",
+          "THIRD_PARTY_VENDOR_INTAGE",
+          "THIRD_PARTY_VENDOR_MACROMILL",
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+        ]
+      },
+      "demandGenSettings.thirdPartyMeasurementConfigs.viewabilityVendorConfigs": {
+        "type": "array<object>"
+      },
+      "demandGenSettings.thirdPartyMeasurementConfigs.viewabilityVendorConfigs[].placementId": {
+        "type": "string"
+      },
+      "demandGenSettings.thirdPartyMeasurementConfigs.viewabilityVendorConfigs[].vendor": {
+        "type": "string",
+        "enum": [
+          "THIRD_PARTY_VENDOR_UNSPECIFIED",
+          "THIRD_PARTY_VENDOR_MOAT",
+          "THIRD_PARTY_VENDOR_DOUBLE_VERIFY",
+          "THIRD_PARTY_VENDOR_INTEGRAL_AD_SCIENCE",
+          "THIRD_PARTY_VENDOR_COMSCORE",
+          "THIRD_PARTY_VENDOR_TELEMETRY",
+          "THIRD_PARTY_VENDOR_MEETRICS",
+          "THIRD_PARTY_VENDOR_ZEFR",
+          "THIRD_PARTY_VENDOR_NIELSEN",
+          "THIRD_PARTY_VENDOR_KANTAR",
+          "THIRD_PARTY_VENDOR_DYNATA",
+          "THIRD_PARTY_VENDOR_TRANSUNION",
+          "THIRD_PARTY_VENDOR_ORIGIN",
+          "THIRD_PARTY_VENDOR_GEMIUS",
+          "THIRD_PARTY_VENDOR_MEDIA_SCOPE",
+          "THIRD_PARTY_VENDOR_AUDIENCE_PROJECT",
+          "THIRD_PARTY_VENDOR_VIDEO_AMP",
+          "THIRD_PARTY_VENDOR_ISPOT_TV",
+          "THIRD_PARTY_VENDOR_INTAGE",
+          "THIRD_PARTY_VENDOR_MACROMILL",
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+        ]
+      },
+      "displayName": {
+        "type": "string",
+        "required": true
+      },
+      "entityStatus": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "ENTITY_STATUS_UNSPECIFIED",
+          "ENTITY_STATUS_ACTIVE",
+          "ENTITY_STATUS_ARCHIVED",
+          "ENTITY_STATUS_DRAFT",
+          "ENTITY_STATUS_PAUSED",
+          "ENTITY_STATUS_SCHEDULED_FOR_DELETION"
+        ]
+      },
+      "excludeNewExchanges": {
+        "type": "boolean"
+      },
+      "flight": {
+        "type": "object",
+        "required": true
+      },
+      "flight.dateRange": {
+        "type": "object"
+      },
+      "flight.dateRange.endDate": {
+        "type": "object"
+      },
+      "flight.dateRange.endDate.day": {
+        "type": "integer(int32)"
+      },
+      "flight.dateRange.endDate.month": {
+        "type": "integer(int32)"
+      },
+      "flight.dateRange.endDate.year": {
+        "type": "integer(int32)"
+      },
+      "flight.dateRange.startDate": {
+        "type": "object"
+      },
+      "flight.dateRange.startDate.day": {
+        "type": "integer(int32)"
+      },
+      "flight.dateRange.startDate.month": {
+        "type": "integer(int32)"
+      },
+      "flight.dateRange.startDate.year": {
+        "type": "integer(int32)"
+      },
+      "flight.flightDateType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "LINE_ITEM_FLIGHT_DATE_TYPE_UNSPECIFIED",
+          "LINE_ITEM_FLIGHT_DATE_TYPE_INHERITED",
+          "LINE_ITEM_FLIGHT_DATE_TYPE_CUSTOM"
+        ]
+      },
+      "frequencyCap": {
+        "type": "object"
+      },
+      "frequencyCap.maxImpressions": {
+        "type": "integer(int32)"
+      },
+      "frequencyCap.maxViews": {
+        "type": "integer(int32)"
+      },
+      "frequencyCap.timeUnit": {
+        "type": "string",
+        "enum": [
+          "TIME_UNIT_UNSPECIFIED",
+          "TIME_UNIT_LIFETIME",
+          "TIME_UNIT_MONTHS",
+          "TIME_UNIT_WEEKS",
+          "TIME_UNIT_DAYS",
+          "TIME_UNIT_HOURS",
+          "TIME_UNIT_MINUTES"
+        ],
+        "enum_deprecated": [
+          "TIME_UNIT_LIFETIME"
+        ]
+      },
+      "frequencyCap.timeUnitCount": {
+        "type": "integer(int32)"
+      },
+      "frequencyCap.unlimited": {
+        "type": "boolean"
+      },
+      "insertionOrderId": {
+        "type": "string(int64)",
+        "required": true
+      },
+      "integrationDetails": {
+        "type": "object"
+      },
+      "integrationDetails.details": {
+        "type": "string"
+      },
+      "integrationDetails.integrationCode": {
+        "type": "string"
+      },
+      "lineItemId": {
+        "type": "string(int64)",
+        "read_only": true
+      },
+      "lineItemType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "LINE_ITEM_TYPE_UNSPECIFIED",
+          "LINE_ITEM_TYPE_DISPLAY_DEFAULT",
+          "LINE_ITEM_TYPE_DISPLAY_MOBILE_APP_INSTALL",
+          "LINE_ITEM_TYPE_VIDEO_DEFAULT",
+          "LINE_ITEM_TYPE_VIDEO_MOBILE_APP_INSTALL",
+          "LINE_ITEM_TYPE_DISPLAY_MOBILE_APP_INVENTORY",
+          "LINE_ITEM_TYPE_VIDEO_MOBILE_APP_INVENTORY",
+          "LINE_ITEM_TYPE_AUDIO_DEFAULT",
+          "LINE_ITEM_TYPE_VIDEO_OVER_THE_TOP",
+          "LINE_ITEM_TYPE_YOUTUBE_AND_PARTNERS_ACTION",
+          "LINE_ITEM_TYPE_YOUTUBE_AND_PARTNERS_NON_SKIPPABLE",
+          "LINE_ITEM_TYPE_YOUTUBE_AND_PARTNERS_VIDEO_SEQUENCE",
+          "LINE_ITEM_TYPE_YOUTUBE_AND_PARTNERS_AUDIO",
+          "LINE_ITEM_TYPE_YOUTUBE_AND_PARTNERS_REACH",
+          "LINE_ITEM_TYPE_YOUTUBE_AND_PARTNERS_SIMPLE",
+          "LINE_ITEM_TYPE_YOUTUBE_AND_PARTNERS_NON_SKIPPABLE_OVER_THE_TOP",
+          "LINE_ITEM_TYPE_YOUTUBE_AND_PARTNERS_REACH_OVER_THE_TOP",
+          "LINE_ITEM_TYPE_YOUTUBE_AND_PARTNERS_SIMPLE_OVER_THE_TOP",
+          "LINE_ITEM_TYPE_YOUTUBE_AND_PARTNERS_TARGET_FREQUENCY",
+          "LINE_ITEM_TYPE_YOUTUBE_AND_PARTNERS_VIEW",
+          "LINE_ITEM_TYPE_DISPLAY_OUT_OF_HOME",
+          "LINE_ITEM_TYPE_VIDEO_OUT_OF_HOME",
+          "LINE_ITEM_TYPE_DEMAND_GEN"
+        ]
+      },
+      "mobileApp": {
+        "type": "object"
+      },
+      "mobileApp.appId": {
+        "type": "string",
+        "required": true
+      },
+      "mobileApp.displayName": {
+        "type": "string",
+        "read_only": true
+      },
+      "mobileApp.platform": {
+        "type": "string",
+        "read_only": true,
+        "enum": [
+          "PLATFORM_UNSPECIFIED",
+          "IOS",
+          "ANDROID"
+        ]
+      },
+      "mobileApp.publisher": {
+        "type": "string",
+        "read_only": true
+      },
+      "name": {
+        "type": "string",
+        "read_only": true
+      },
+      "optimizeFixedBidding": {
+        "type": "boolean"
+      },
+      "pacing": {
+        "type": "object",
+        "required": true
+      },
+      "pacing.dailyMaxImpressions": {
+        "type": "string(int64)"
+      },
+      "pacing.dailyMaxMicros": {
+        "type": "string(int64)"
+      },
+      "pacing.pacingPeriod": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "PACING_PERIOD_UNSPECIFIED",
+          "PACING_PERIOD_DAILY",
+          "PACING_PERIOD_FLIGHT"
+        ]
+      },
+      "pacing.pacingType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "PACING_TYPE_UNSPECIFIED",
+          "PACING_TYPE_AHEAD",
+          "PACING_TYPE_ASAP",
+          "PACING_TYPE_EVEN"
+        ]
+      },
+      "partnerCosts": {
+        "type": "array<object>"
+      },
+      "partnerCosts[].costType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "PARTNER_COST_TYPE_UNSPECIFIED",
+          "PARTNER_COST_TYPE_ADLOOX",
+          "PARTNER_COST_TYPE_ADLOOX_PREBID",
+          "PARTNER_COST_TYPE_ADSAFE",
+          "PARTNER_COST_TYPE_ADXPOSE",
+          "PARTNER_COST_TYPE_AGGREGATE_KNOWLEDGE",
+          "PARTNER_COST_TYPE_AGENCY_TRADING_DESK",
+          "PARTNER_COST_TYPE_DV360_FEE",
+          "PARTNER_COST_TYPE_COMSCORE_VCE",
+          "PARTNER_COST_TYPE_DATA_MANAGEMENT_PLATFORM",
+          "PARTNER_COST_TYPE_DEFAULT",
+          "PARTNER_COST_TYPE_DOUBLE_VERIFY",
+          "PARTNER_COST_TYPE_DOUBLE_VERIFY_PREBID",
+          "PARTNER_COST_TYPE_EVIDON",
+          "PARTNER_COST_TYPE_INTEGRAL_AD_SCIENCE_VIDEO",
+          "PARTNER_COST_TYPE_INTEGRAL_AD_SCIENCE_PREBID",
+          "PARTNER_COST_TYPE_MEDIA_COST_DATA",
+          "PARTNER_COST_TYPE_MOAT_VIDEO",
+          "PARTNER_COST_TYPE_NIELSEN_DAR",
+          "PARTNER_COST_TYPE_SHOP_LOCAL",
+          "PARTNER_COST_TYPE_TERACENT",
+          "PARTNER_COST_TYPE_THIRD_PARTY_AD_SERVER",
+          "PARTNER_COST_TYPE_TRUST_METRICS",
+          "PARTNER_COST_TYPE_VIZU",
+          "PARTNER_COST_TYPE_CUSTOM_FEE_1",
+          "PARTNER_COST_TYPE_CUSTOM_FEE_2",
+          "PARTNER_COST_TYPE_CUSTOM_FEE_3",
+          "PARTNER_COST_TYPE_CUSTOM_FEE_4",
+          "PARTNER_COST_TYPE_CUSTOM_FEE_5",
+          "PARTNER_COST_TYPE_SCIBIDS_FEE"
+        ]
+      },
+      "partnerCosts[].feeAmount": {
+        "type": "string(int64)"
+      },
+      "partnerCosts[].feePercentageMillis": {
+        "type": "string(int64)"
+      },
+      "partnerCosts[].feeType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "PARTNER_COST_FEE_TYPE_UNSPECIFIED",
+          "PARTNER_COST_FEE_TYPE_CPM_FEE",
+          "PARTNER_COST_FEE_TYPE_MEDIA_FEE"
+        ]
+      },
+      "partnerCosts[].invoiceType": {
+        "type": "string",
+        "enum": [
+          "PARTNER_COST_INVOICE_TYPE_UNSPECIFIED",
+          "PARTNER_COST_INVOICE_TYPE_DV360",
+          "PARTNER_COST_INVOICE_TYPE_PARTNER"
+        ]
+      },
+      "partnerRevenueModel": {
+        "type": "object",
+        "required": true
+      },
+      "partnerRevenueModel.markupAmount": {
+        "type": "string(int64)",
+        "required": true
+      },
+      "partnerRevenueModel.markupType": {
+        "type": "string",
+        "required": true,
+        "enum": [
+          "PARTNER_REVENUE_MODEL_MARKUP_TYPE_UNSPECIFIED",
+          "PARTNER_REVENUE_MODEL_MARKUP_TYPE_CPM",
+          "PARTNER_REVENUE_MODEL_MARKUP_TYPE_MEDIA_COST_MARKUP",
+          "PARTNER_REVENUE_MODEL_MARKUP_TYPE_TOTAL_MEDIA_COST_MARKUP"
+        ],
+        "enum_deprecated": [
+          "PARTNER_REVENUE_MODEL_MARKUP_TYPE_MEDIA_COST_MARKUP"
+        ]
+      },
+      "reservationType": {
+        "type": "string",
+        "read_only": true,
+        "enum": [
+          "RESERVATION_TYPE_UNSPECIFIED",
+          "RESERVATION_TYPE_NOT_GUARANTEED",
+          "RESERVATION_TYPE_PROGRAMMATIC_GUARANTEED",
+          "RESERVATION_TYPE_TAG_GUARANTEED",
+          "RESERVATION_TYPE_PETRA_VIRAL",
+          "RESERVATION_TYPE_INSTANT_RESERVE"
+        ]
+      },
+      "targetingExpansion": {
+        "type": "object"
+      },
+      "targetingExpansion.audienceExpansionLevel": {
+        "type": "string",
+        "read_only": true,
+        "enum": [
+          "UNKNOWN",
+          "NO_REACH",
+          "LEAST_REACH",
+          "MID_REACH",
+          "MOST_REACH"
+        ]
+      },
+      "targetingExpansion.audienceExpansionSeedListExcluded": {
+        "type": "boolean",
+        "read_only": true
+      },
+      "targetingExpansion.enableOptimizedTargeting": {
+        "type": "boolean",
+        "required": true
+      },
+      "targetingExpansion.excludeDemographicExpansion": {
+        "type": "boolean"
+      },
+      "updateTime": {
+        "type": "string(google-datetime)",
+        "read_only": true
+      },
+      "warningMessages": {
+        "type": "array<string>",
+        "read_only": true,
+        "enum": [
+          "LINE_ITEM_WARNING_MESSAGE_UNSPECIFIED",
+          "INVALID_FLIGHT_DATES",
+          "EXPIRED",
+          "PENDING_FLIGHT",
+          "ALL_PARTNER_ENABLED_EXCHANGES_NEGATIVELY_TARGETED",
+          "INVALID_INVENTORY_SOURCE",
+          "APP_INVENTORY_INVALID_SITE_TARGETING",
+          "APP_INVENTORY_INVALID_AUDIENCE_LISTS",
+          "NO_VALID_CREATIVE",
+          "PARENT_INSERTION_ORDER_PAUSED",
+          "PARENT_INSERTION_ORDER_EXPIRED"
+        ]
+      },
+      "youtubeAndPartnersSettings": {
+        "type": "object",
+        "read_only": true
+      },
+      "youtubeAndPartnersSettings.contentCategory": {
+        "type": "string",
+        "read_only": true,
+        "enum": [
+          "YOUTUBE_AND_PARTNERS_CONTENT_CATEGORY_UNSPECIFIED",
+          "YOUTUBE_AND_PARTNERS_CONTENT_CATEGORY_STANDARD",
+          "YOUTUBE_AND_PARTNERS_CONTENT_CATEGORY_EXPANDED",
+          "YOUTUBE_AND_PARTNERS_CONTENT_CATEGORY_LIMITED"
+        ]
+      },
+      "youtubeAndPartnersSettings.effectiveContentCategory": {
+        "type": "string",
+        "read_only": true,
+        "enum": [
+          "YOUTUBE_AND_PARTNERS_CONTENT_CATEGORY_UNSPECIFIED",
+          "YOUTUBE_AND_PARTNERS_CONTENT_CATEGORY_STANDARD",
+          "YOUTUBE_AND_PARTNERS_CONTENT_CATEGORY_EXPANDED",
+          "YOUTUBE_AND_PARTNERS_CONTENT_CATEGORY_LIMITED"
+        ]
+      },
+      "youtubeAndPartnersSettings.inventorySourceSettings": {
+        "type": "object"
+      },
+      "youtubeAndPartnersSettings.inventorySourceSettings.includeGoogleTv": {
+        "type": "boolean"
+      },
+      "youtubeAndPartnersSettings.inventorySourceSettings.includeYoutube": {
+        "type": "boolean"
+      },
+      "youtubeAndPartnersSettings.inventorySourceSettings.includeYoutubeVideoPartners": {
+        "type": "boolean"
+      },
+      "youtubeAndPartnersSettings.leadFormId": {
+        "type": "string(int64)"
+      },
+      "youtubeAndPartnersSettings.linkedMerchantId": {
+        "type": "string(int64)"
+      },
+      "youtubeAndPartnersSettings.relatedVideoIds": {
+        "type": "array<string>"
+      },
+      "youtubeAndPartnersSettings.targetFrequency": {
+        "type": "object"
+      },
+      "youtubeAndPartnersSettings.targetFrequency.targetCount": {
+        "type": "string(int64)"
+      },
+      "youtubeAndPartnersSettings.targetFrequency.timeUnit": {
+        "type": "string",
+        "enum": [
+          "TIME_UNIT_UNSPECIFIED",
+          "TIME_UNIT_LIFETIME",
+          "TIME_UNIT_MONTHS",
+          "TIME_UNIT_WEEKS",
+          "TIME_UNIT_DAYS",
+          "TIME_UNIT_HOURS",
+          "TIME_UNIT_MINUTES"
+        ],
+        "enum_deprecated": [
+          "TIME_UNIT_LIFETIME"
+        ]
+      },
+      "youtubeAndPartnersSettings.targetFrequency.timeUnitCount": {
+        "type": "integer(int32)"
+      },
+      "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs": {
+        "type": "object"
+      },
+      "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.brandLiftVendorConfigs": {
+        "type": "array<object>"
+      },
+      "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.brandLiftVendorConfigs[].placementId": {
+        "type": "string"
+      },
+      "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.brandLiftVendorConfigs[].vendor": {
+        "type": "string",
+        "enum": [
+          "THIRD_PARTY_VENDOR_UNSPECIFIED",
+          "THIRD_PARTY_VENDOR_MOAT",
+          "THIRD_PARTY_VENDOR_DOUBLE_VERIFY",
+          "THIRD_PARTY_VENDOR_INTEGRAL_AD_SCIENCE",
+          "THIRD_PARTY_VENDOR_COMSCORE",
+          "THIRD_PARTY_VENDOR_TELEMETRY",
+          "THIRD_PARTY_VENDOR_MEETRICS",
+          "THIRD_PARTY_VENDOR_ZEFR",
+          "THIRD_PARTY_VENDOR_NIELSEN",
+          "THIRD_PARTY_VENDOR_KANTAR",
+          "THIRD_PARTY_VENDOR_DYNATA",
+          "THIRD_PARTY_VENDOR_TRANSUNION",
+          "THIRD_PARTY_VENDOR_ORIGIN",
+          "THIRD_PARTY_VENDOR_GEMIUS",
+          "THIRD_PARTY_VENDOR_MEDIA_SCOPE",
+          "THIRD_PARTY_VENDOR_AUDIENCE_PROJECT",
+          "THIRD_PARTY_VENDOR_VIDEO_AMP",
+          "THIRD_PARTY_VENDOR_ISPOT_TV",
+          "THIRD_PARTY_VENDOR_INTAGE",
+          "THIRD_PARTY_VENDOR_MACROMILL",
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+        ]
+      },
+      "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.brandSafetyVendorConfigs": {
+        "type": "array<object>"
+      },
+      "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.brandSafetyVendorConfigs[].placementId": {
+        "type": "string"
+      },
+      "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.brandSafetyVendorConfigs[].vendor": {
+        "type": "string",
+        "enum": [
+          "THIRD_PARTY_VENDOR_UNSPECIFIED",
+          "THIRD_PARTY_VENDOR_MOAT",
+          "THIRD_PARTY_VENDOR_DOUBLE_VERIFY",
+          "THIRD_PARTY_VENDOR_INTEGRAL_AD_SCIENCE",
+          "THIRD_PARTY_VENDOR_COMSCORE",
+          "THIRD_PARTY_VENDOR_TELEMETRY",
+          "THIRD_PARTY_VENDOR_MEETRICS",
+          "THIRD_PARTY_VENDOR_ZEFR",
+          "THIRD_PARTY_VENDOR_NIELSEN",
+          "THIRD_PARTY_VENDOR_KANTAR",
+          "THIRD_PARTY_VENDOR_DYNATA",
+          "THIRD_PARTY_VENDOR_TRANSUNION",
+          "THIRD_PARTY_VENDOR_ORIGIN",
+          "THIRD_PARTY_VENDOR_GEMIUS",
+          "THIRD_PARTY_VENDOR_MEDIA_SCOPE",
+          "THIRD_PARTY_VENDOR_AUDIENCE_PROJECT",
+          "THIRD_PARTY_VENDOR_VIDEO_AMP",
+          "THIRD_PARTY_VENDOR_ISPOT_TV",
+          "THIRD_PARTY_VENDOR_INTAGE",
+          "THIRD_PARTY_VENDOR_MACROMILL",
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+        ]
+      },
+      "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.reachVendorConfigs": {
+        "type": "array<object>"
+      },
+      "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.reachVendorConfigs[].placementId": {
+        "type": "string"
+      },
+      "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.reachVendorConfigs[].vendor": {
+        "type": "string",
+        "enum": [
+          "THIRD_PARTY_VENDOR_UNSPECIFIED",
+          "THIRD_PARTY_VENDOR_MOAT",
+          "THIRD_PARTY_VENDOR_DOUBLE_VERIFY",
+          "THIRD_PARTY_VENDOR_INTEGRAL_AD_SCIENCE",
+          "THIRD_PARTY_VENDOR_COMSCORE",
+          "THIRD_PARTY_VENDOR_TELEMETRY",
+          "THIRD_PARTY_VENDOR_MEETRICS",
+          "THIRD_PARTY_VENDOR_ZEFR",
+          "THIRD_PARTY_VENDOR_NIELSEN",
+          "THIRD_PARTY_VENDOR_KANTAR",
+          "THIRD_PARTY_VENDOR_DYNATA",
+          "THIRD_PARTY_VENDOR_TRANSUNION",
+          "THIRD_PARTY_VENDOR_ORIGIN",
+          "THIRD_PARTY_VENDOR_GEMIUS",
+          "THIRD_PARTY_VENDOR_MEDIA_SCOPE",
+          "THIRD_PARTY_VENDOR_AUDIENCE_PROJECT",
+          "THIRD_PARTY_VENDOR_VIDEO_AMP",
+          "THIRD_PARTY_VENDOR_ISPOT_TV",
+          "THIRD_PARTY_VENDOR_INTAGE",
+          "THIRD_PARTY_VENDOR_MACROMILL",
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+        ]
+      },
+      "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.viewabilityVendorConfigs": {
+        "type": "array<object>"
+      },
+      "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.viewabilityVendorConfigs[].placementId": {
+        "type": "string"
+      },
+      "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.viewabilityVendorConfigs[].vendor": {
+        "type": "string",
+        "enum": [
+          "THIRD_PARTY_VENDOR_UNSPECIFIED",
+          "THIRD_PARTY_VENDOR_MOAT",
+          "THIRD_PARTY_VENDOR_DOUBLE_VERIFY",
+          "THIRD_PARTY_VENDOR_INTEGRAL_AD_SCIENCE",
+          "THIRD_PARTY_VENDOR_COMSCORE",
+          "THIRD_PARTY_VENDOR_TELEMETRY",
+          "THIRD_PARTY_VENDOR_MEETRICS",
+          "THIRD_PARTY_VENDOR_ZEFR",
+          "THIRD_PARTY_VENDOR_NIELSEN",
+          "THIRD_PARTY_VENDOR_KANTAR",
+          "THIRD_PARTY_VENDOR_DYNATA",
+          "THIRD_PARTY_VENDOR_TRANSUNION",
+          "THIRD_PARTY_VENDOR_ORIGIN",
+          "THIRD_PARTY_VENDOR_GEMIUS",
+          "THIRD_PARTY_VENDOR_MEDIA_SCOPE",
+          "THIRD_PARTY_VENDOR_AUDIENCE_PROJECT",
+          "THIRD_PARTY_VENDOR_VIDEO_AMP",
+          "THIRD_PARTY_VENDOR_ISPOT_TV",
+          "THIRD_PARTY_VENDOR_INTAGE",
+          "THIRD_PARTY_VENDOR_MACROMILL",
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+        ]
+      },
+      "youtubeAndPartnersSettings.videoAdInventoryControl": {
+        "type": "object"
+      },
+      "youtubeAndPartnersSettings.videoAdInventoryControl.allowInFeed": {
+        "type": "boolean"
+      },
+      "youtubeAndPartnersSettings.videoAdInventoryControl.allowInStream": {
+        "type": "boolean"
+      },
+      "youtubeAndPartnersSettings.videoAdInventoryControl.allowNonSkippableInStream": {
+        "type": "boolean"
+      },
+      "youtubeAndPartnersSettings.videoAdInventoryControl.allowShorts": {
+        "type": "boolean"
+      },
+      "youtubeAndPartnersSettings.videoAdSequenceSettings": {
+        "type": "object"
+      },
+      "youtubeAndPartnersSettings.videoAdSequenceSettings.minimumDuration": {
+        "type": "string",
+        "enum": [
+          "VIDEO_AD_SEQUENCE_MINIMUM_DURATION_UNSPECIFIED",
+          "VIDEO_AD_SEQUENCE_MINIMUM_DURATION_WEEK",
+          "VIDEO_AD_SEQUENCE_MINIMUM_DURATION_MONTH"
+        ]
+      },
+      "youtubeAndPartnersSettings.videoAdSequenceSettings.steps": {
+        "type": "array<object>"
+      },
+      "youtubeAndPartnersSettings.videoAdSequenceSettings.steps[].adGroupId": {
+        "type": "string(int64)"
+      },
+      "youtubeAndPartnersSettings.videoAdSequenceSettings.steps[].interactionType": {
+        "type": "string",
+        "enum": [
+          "INTERACTION_TYPE_UNSPECIFIED",
+          "INTERACTION_TYPE_PAID_VIEW",
+          "INTERACTION_TYPE_SKIP",
+          "INTERACTION_TYPE_IMPRESSION",
+          "INTERACTION_TYPE_ENGAGED_IMPRESSION"
+        ]
+      },
+      "youtubeAndPartnersSettings.videoAdSequenceSettings.steps[].previousStepId": {
+        "type": "string(int64)"
+      },
+      "youtubeAndPartnersSettings.videoAdSequenceSettings.steps[].stepId": {
+        "type": "string(int64)"
+      },
+      "youtubeAndPartnersSettings.viewFrequencyCap": {
+        "type": "object"
+      },
+      "youtubeAndPartnersSettings.viewFrequencyCap.maxImpressions": {
+        "type": "integer(int32)"
+      },
+      "youtubeAndPartnersSettings.viewFrequencyCap.maxViews": {
+        "type": "integer(int32)"
+      },
+      "youtubeAndPartnersSettings.viewFrequencyCap.timeUnit": {
+        "type": "string",
+        "enum": [
+          "TIME_UNIT_UNSPECIFIED",
+          "TIME_UNIT_LIFETIME",
+          "TIME_UNIT_MONTHS",
+          "TIME_UNIT_WEEKS",
+          "TIME_UNIT_DAYS",
+          "TIME_UNIT_HOURS",
+          "TIME_UNIT_MINUTES"
+        ],
+        "enum_deprecated": [
+          "TIME_UNIT_LIFETIME"
+        ]
+      },
+      "youtubeAndPartnersSettings.viewFrequencyCap.timeUnitCount": {
+        "type": "integer(int32)"
+      },
+      "youtubeAndPartnersSettings.viewFrequencyCap.unlimited": {
+        "type": "boolean"
+      }
+    }
+  }
+}

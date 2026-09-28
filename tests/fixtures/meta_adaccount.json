@@ -1,0 +1,12 @@
+{
+  "apis": [
+    {"method": "GET", "endpoint": "campaigns", "return": "Campaign", "params": []},
+    {"method": "POST", "endpoint": "campaigns", "return": "Campaign", "params": [
+      {"name": "name", "type": "string", "required": false},
+      {"name": "objective", "type": "adaccountcampaigns_objective_enum_param", "required": false},
+      {"name": "daily_budget", "type": "unsigned int", "required": false},
+      {"name": "special_ad_categories", "type": "list<adaccountcampaigns_special_ad_categories_enum_param>", "required": true}
+    ]}
+  ],
+  "fields": []
+}

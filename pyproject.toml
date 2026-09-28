@@ -1,0 +1,10 @@
+[project]
+name = "apiwatch"
+version = "0.1.0"
+description = "Weekly change detection for the DV360, Meta and The Trade Desk campaign APIs"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31", "PyYAML>=6.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "tests"]

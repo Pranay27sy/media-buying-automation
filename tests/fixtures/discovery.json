@@ -1,0 +1,32 @@
+{
+  "version": "v4",
+  "revision": "20260101",
+  "schemas": {
+    "Campaign": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string", "readOnly": true, "description": "Output only. Resource name."},
+        "displayName": {"type": "string", "description": "Required. The display name."},
+        "entityStatus": {
+          "type": "string",
+          "description": "Required. Status.",
+          "enum": ["ENTITY_STATUS_UNSPECIFIED", "ENTITY_STATUS_ACTIVE", "ENTITY_STATUS_PAUSED"],
+          "enumDeprecated": [false, false, false]
+        },
+        "campaignGoal": {"$ref": "CampaignGoal", "description": "Required. The goal."},
+        "campaignBudgets": {"type": "array", "items": {"$ref": "CampaignBudget"}},
+        "parent": {"$ref": "Campaign"}
+      }
+    },
+    "CampaignGoal": {
+      "type": "object",
+      "properties": {
+        "campaignGoalType": {"type": "string", "description": "Required. Type.", "enum": ["A", "B"]}
+      }
+    },
+    "CampaignBudget": {
+      "type": "object",
+      "properties": {"budgetAmountMicros": {"type": "string", "format": "int64"}}
+    }
+  }
+}

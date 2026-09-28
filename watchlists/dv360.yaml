@@ -1,0 +1,63 @@
+# Fields our campaign tool sends to DV360 (standard set - edit to match your tool).
+# A field with a list after it = we also check those values are still allowed.
+platform: dv360
+version_in_use: v4
+
+levels:
+  Campaign:
+    displayName:
+    entityStatus: [ENTITY_STATUS_ACTIVE, ENTITY_STATUS_PAUSED, ENTITY_STATUS_DRAFT]
+    campaignGoal.campaignGoalType: [CAMPAIGN_GOAL_TYPE_BRAND_AWARENESS, CAMPAIGN_GOAL_TYPE_ONLINE_ACTION, CAMPAIGN_GOAL_TYPE_APP_INSTALL, CAMPAIGN_GOAL_TYPE_OFFLINE_ACTION]
+    campaignGoal.performanceGoal.performanceGoalType: [PERFORMANCE_GOAL_TYPE_CPM, PERFORMANCE_GOAL_TYPE_CPC, PERFORMANCE_GOAL_TYPE_CPA, PERFORMANCE_GOAL_TYPE_CTR, PERFORMANCE_GOAL_TYPE_VIEWABILITY]
+    campaignGoal.performanceGoal.performanceGoalAmountMicros:
+    campaignFlight.plannedDates.startDate:
+    campaignFlight.plannedDates.endDate:
+    campaignFlight.plannedSpendAmountMicros:
+    frequencyCap.unlimited:
+    frequencyCap.maxImpressions:
+    frequencyCap.timeUnit: [TIME_UNIT_MONTHS, TIME_UNIT_WEEKS, TIME_UNIT_DAYS, TIME_UNIT_HOURS]
+    frequencyCap.timeUnitCount:
+
+  InsertionOrder:
+    campaignId:
+    displayName:
+    entityStatus: [ENTITY_STATUS_ACTIVE, ENTITY_STATUS_PAUSED, ENTITY_STATUS_DRAFT]
+    insertionOrderType: [RTB, OVER_THE_TOP]
+    pacing.pacingPeriod: [PACING_PERIOD_DAILY, PACING_PERIOD_FLIGHT]
+    pacing.pacingType: [PACING_TYPE_AHEAD, PACING_TYPE_ASAP, PACING_TYPE_EVEN]
+    pacing.dailyMaxMicros:
+    frequencyCap.unlimited:
+    frequencyCap.maxImpressions:
+    frequencyCap.timeUnit:
+    frequencyCap.timeUnitCount:
+    kpi.kpiType: [KPI_TYPE_CPM, KPI_TYPE_CPC, KPI_TYPE_CPA, KPI_TYPE_CTR, KPI_TYPE_VIEWABILITY]
+    kpi.kpiAmountMicros:
+    budget.budgetUnit: [BUDGET_UNIT_CURRENCY, BUDGET_UNIT_IMPRESSIONS]
+    budget.automationType:
+    budget.budgetSegments[].budgetAmountMicros:
+    budget.budgetSegments[].dateRange:
+    bidStrategy.fixedBid.bidAmountMicros:
+    optimizationObjective:
+
+  LineItem:
+    insertionOrderId:
+    displayName:
+    lineItemType: [LINE_ITEM_TYPE_DISPLAY_DEFAULT, LINE_ITEM_TYPE_VIDEO_DEFAULT]
+    entityStatus: [ENTITY_STATUS_ACTIVE, ENTITY_STATUS_PAUSED, ENTITY_STATUS_DRAFT]
+    flight.flightDateType: [LINE_ITEM_FLIGHT_DATE_TYPE_INHERITED, LINE_ITEM_FLIGHT_DATE_TYPE_CUSTOM]
+    flight.dateRange.startDate:
+    flight.dateRange.endDate:
+    budget.budgetAllocationType: [LINE_ITEM_BUDGET_ALLOCATION_TYPE_AUTOMATIC, LINE_ITEM_BUDGET_ALLOCATION_TYPE_FIXED, LINE_ITEM_BUDGET_ALLOCATION_TYPE_UNLIMITED]
+    budget.maxAmount:
+    pacing.pacingPeriod: [PACING_PERIOD_DAILY, PACING_PERIOD_FLIGHT]
+    pacing.pacingType: [PACING_TYPE_AHEAD, PACING_TYPE_ASAP, PACING_TYPE_EVEN]
+    pacing.dailyMaxMicros:
+    frequencyCap.unlimited:
+    frequencyCap.maxImpressions:
+    frequencyCap.timeUnit:
+    frequencyCap.timeUnitCount:
+    partnerRevenueModel.markupType:
+    partnerRevenueModel.markupAmount:
+    bidStrategy.fixedBid.bidAmountMicros:
+    creativeIds:
+    containsEuPoliticalAds:
