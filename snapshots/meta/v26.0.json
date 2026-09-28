@@ -1,0 +1,402 @@
+{
+  "platform": "meta",
+  "version": "v26.0",
+  "revision": "",
+  "source": "https://raw.githubusercontent.com/facebook/facebook-business-sdk-codegen/main/api_specs/specs",
+  "entities": {
+    "Ad": {
+      "ad_schedule_end_time": {
+        "type": "datetime"
+      },
+      "ad_schedule_start_time": {
+        "type": "datetime"
+      },
+      "adlabels": {
+        "type": "list<Object>"
+      },
+      "adset_id": {
+        "type": "unsigned int"
+      },
+      "adset_spec": {
+        "type": "AdSet"
+      },
+      "audience_id": {
+        "type": "string"
+      },
+      "bid_amount": {
+        "type": "int"
+      },
+      "conversion_domain": {
+        "type": "string"
+      },
+      "creative": {
+        "type": "AdCreative",
+        "required": true
+      },
+      "creative_asset_groups_spec": {
+        "type": "Object"
+      },
+      "creative_audience_pairing_persona": {
+        "type": "map"
+      },
+      "creative_automation_spec": {
+        "type": "Object"
+      },
+      "dataset_split_specs": {
+        "type": "list<map>"
+      },
+      "date_format": {
+        "type": "string"
+      },
+      "display_sequence": {
+        "type": "unsigned int"
+      },
+      "draft_adgroup_id": {
+        "type": "string"
+      },
+      "engagement_audience": {
+        "type": "bool"
+      },
+      "execution_options": {
+        "type": "list<adaccountads_execution_options_enum_param>"
+      },
+      "include_demolink_hashes": {
+        "type": "bool"
+      },
+      "name": {
+        "type": "string",
+        "required": true
+      },
+      "priority": {
+        "type": "unsigned int"
+      },
+      "source_ad_id": {
+        "type": "string"
+      },
+      "status": {
+        "type": "adaccountads_status_enum_param"
+      },
+      "tracking_specs": {
+        "type": "Object"
+      }
+    },
+    "AdSet": {
+      "ad_set_goal": {
+        "type": "map"
+      },
+      "adlabels": {
+        "type": "list<Object>"
+      },
+      "adset_schedule": {
+        "type": "list<Object>"
+      },
+      "attribution_count_type": {
+        "type": "adaccountadsets_attribution_count_type_enum_param"
+      },
+      "attribution_spec": {
+        "type": "list<map>"
+      },
+      "automatic_manual_state": {
+        "type": "adaccountadsets_automatic_manual_state_enum_param"
+      },
+      "bid_adjustments": {
+        "type": "Object"
+      },
+      "bid_amount": {
+        "type": "int"
+      },
+      "bid_constraints": {
+        "type": "map<string, Object>"
+      },
+      "bid_strategy": {
+        "type": "adaccountadsets_bid_strategy_enum_param"
+      },
+      "billing_event": {
+        "type": "adaccountadsets_billing_event_enum_param"
+      },
+      "brand_safety_config": {
+        "type": "map"
+      },
+      "budget_schedule_specs": {
+        "type": "list<Object>"
+      },
+      "budget_source": {
+        "type": "adaccountadsets_budget_source_enum_param"
+      },
+      "budget_split_set_id": {
+        "type": "string"
+      },
+      "campaign_attribution": {
+        "type": "Object"
+      },
+      "campaign_id": {
+        "type": "string"
+      },
+      "campaign_spec": {
+        "type": "Object"
+      },
+      "creative_sequence": {
+        "type": "list<string>"
+      },
+      "creative_sequence_repetition_pattern": {
+        "type": "adaccountadsets_creative_sequence_repetition_pattern_enum_param"
+      },
+      "daily_budget": {
+        "type": "unsigned int"
+      },
+      "daily_imps": {
+        "type": "unsigned int"
+      },
+      "daily_min_spend_target": {
+        "type": "unsigned int"
+      },
+      "daily_spend_cap": {
+        "type": "unsigned int"
+      },
+      "date_format": {
+        "type": "string"
+      },
+      "destination_type": {
+        "type": "adaccountadsets_destination_type_enum_param"
+      },
+      "dsa_beneficiary": {
+        "type": "string"
+      },
+      "dsa_payor": {
+        "type": "string"
+      },
+      "end_time": {
+        "type": "datetime"
+      },
+      "execution_options": {
+        "type": "list<adaccountadsets_execution_options_enum_param>"
+      },
+      "existing_customer_budget_percentage": {
+        "type": "unsigned int"
+      },
+      "frequency_control_specs": {
+        "type": "list<Object>"
+      },
+      "full_funnel_exploration_mode": {
+        "type": "adaccountadsets_full_funnel_exploration_mode_enum_param"
+      },
+      "is_ba_skip_delayed_eligible": {
+        "type": "bool"
+      },
+      "is_budget_schedule_enabled": {
+        "type": "bool"
+      },
+      "is_dc_follow_optimized": {
+        "type": "bool"
+      },
+      "is_dynamic_creative": {
+        "type": "bool"
+      },
+      "is_incremental_attribution_enabled": {
+        "type": "bool"
+      },
+      "is_sac_cfca_terms_certified": {
+        "type": "bool"
+      },
+      "is_sequenced_conversion_creation": {
+        "type": "bool"
+      },
+      "lifetime_budget": {
+        "type": "unsigned int"
+      },
+      "lifetime_imps": {
+        "type": "unsigned int"
+      },
+      "lifetime_min_spend_target": {
+        "type": "unsigned int"
+      },
+      "lifetime_spend_cap": {
+        "type": "unsigned int"
+      },
+      "line_number": {
+        "type": "unsigned int"
+      },
+      "live_video_ad_campaign_config": {
+        "type": "Object"
+      },
+      "max_budget_spend_percentage": {
+        "type": "unsigned int"
+      },
+      "meta_moment_maker_spec": {
+        "type": "map"
+      },
+      "min_budget_spend_percentage": {
+        "type": "unsigned int"
+      },
+      "multi_event_conversion_attribution_window_seconds": {
+        "type": "unsigned int"
+      },
+      "multi_optimization_goal_weight": {
+        "type": "adaccountadsets_multi_optimization_goal_weight_enum_param"
+      },
+      "name": {
+        "type": "string",
+        "required": true
+      },
+      "optimization_goal": {
+        "type": "adaccountadsets_optimization_goal_enum_param"
+      },
+      "optimization_sub_event": {
+        "type": "adaccountadsets_optimization_sub_event_enum_param"
+      },
+      "pacing_type": {
+        "type": "list<string>"
+      },
+      "placement_soft_opt_out": {
+        "type": "Object"
+      },
+      "promoted_object": {
+        "type": "Object"
+      },
+      "rb_prediction_id": {
+        "type": "string"
+      },
+      "regional_regulated_categories": {
+        "type": "list<adaccountadsets_regional_regulated_categories_enum_param>"
+      },
+      "regional_regulation_identities": {
+        "type": "map"
+      },
+      "relative_value": {
+        "type": "float"
+      },
+      "rf_prediction_id": {
+        "type": "string"
+      },
+      "source_adset_id": {
+        "type": "string"
+      },
+      "start_time": {
+        "type": "datetime"
+      },
+      "status": {
+        "type": "adaccountadsets_status_enum_param"
+      },
+      "targeting": {
+        "type": "Targeting"
+      },
+      "time_based_ad_rotation_id_blocks": {
+        "type": "list<list<unsigned int>>"
+      },
+      "time_based_ad_rotation_intervals": {
+        "type": "list<unsigned int>"
+      },
+      "time_start": {
+        "type": "datetime"
+      },
+      "time_stop": {
+        "type": "datetime"
+      },
+      "topline_id": {
+        "type": "string"
+      },
+      "trending_topics_spec": {
+        "type": "map"
+      },
+      "tune_for_category": {
+        "type": "adaccountadsets_tune_for_category_enum_param"
+      },
+      "value_rule_set_id": {
+        "type": "string"
+      },
+      "value_rules_applied": {
+        "type": "bool"
+      }
+    },
+    "Campaign": {
+      "adlabels": {
+        "type": "list<Object>"
+      },
+      "bid_strategy": {
+        "type": "adaccountcampaigns_bid_strategy_enum_param"
+      },
+      "budget_schedule_specs": {
+        "type": "list<Object>"
+      },
+      "buying_type": {
+        "type": "string"
+      },
+      "daily_budget": {
+        "type": "unsigned int"
+      },
+      "execution_options": {
+        "type": "list<adaccountcampaigns_execution_options_enum_param>"
+      },
+      "frequency_control_specs": {
+        "type": "list<Object>"
+      },
+      "is_adset_budget_sharing_enabled": {
+        "type": "bool"
+      },
+      "is_budget_schedule_enabled": {
+        "type": "bool"
+      },
+      "is_direct_send_campaign": {
+        "type": "bool"
+      },
+      "is_message_campaign": {
+        "type": "bool"
+      },
+      "is_meta_moment_maker_enabled": {
+        "type": "bool"
+      },
+      "is_reels_trending_ads_enabled": {
+        "type": "bool"
+      },
+      "is_skadnetwork_attribution": {
+        "type": "bool"
+      },
+      "iterative_split_test_configs": {
+        "type": "list<Object>"
+      },
+      "lifetime_budget": {
+        "type": "unsigned int"
+      },
+      "name": {
+        "type": "string"
+      },
+      "objective": {
+        "type": "adaccountcampaigns_objective_enum_param"
+      },
+      "pacing_type": {
+        "type": "list<string>"
+      },
+      "promoted_object": {
+        "type": "Object"
+      },
+      "smart_promotion_type": {
+        "type": "adaccountcampaigns_smart_promotion_type_enum_param"
+      },
+      "source_campaign_id": {
+        "type": "string"
+      },
+      "special_ad_categories": {
+        "type": "list<adaccountcampaigns_special_ad_categories_enum_param>",
+        "required": true
+      },
+      "special_ad_category_country": {
+        "type": "list<adaccountcampaigns_special_ad_category_country_enum_param>"
+      },
+      "spend_cap": {
+        "type": "unsigned int"
+      },
+      "start_time": {
+        "type": "datetime"
+      },
+      "status": {
+        "type": "adaccountcampaigns_status_enum_param"
+      },
+      "stop_time": {
+        "type": "datetime"
+      },
+      "topline_id": {
+        "type": "string"
+      }
+    }
+  }
+}
