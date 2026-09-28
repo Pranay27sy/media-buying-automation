@@ -1,0 +1,7 @@
+platform: meta
+version_in_use: v25.0
+levels:
+  Campaign:
+    name:
+    objective:
+    daily_budget:

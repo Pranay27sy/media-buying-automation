@@ -1,0 +1,79 @@
+name: Weekly API check
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # every Monday 06:00 UTC
+  workflow_dispatch:       # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency: weekly-api-check
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt
+
+      - name: Check DV360, Meta and TTD for API changes
+        id: check
+        env:
+          # Only needed once TTD is switched to automatic checks (see config/platforms.yaml)
+          TTD_AUTH_TOKEN: ${{ secrets.TTD_AUTH_TOKEN }}
+          TTD_LOGIN: ${{ secrets.TTD_LOGIN }}
+          TTD_PASSWORD: ${{ secrets.TTD_PASSWORD }}
+          TTD_CAMPAIGN_ID: ${{ secrets.TTD_CAMPAIGN_ID }}
+          TTD_ADGROUP_ID: ${{ secrets.TTD_ADGROUP_ID }}
+        run: |
+          python -m apiwatch run --propose-upgrades --report api-report.md
+          cat api-report.md >> "$GITHUB_STEP_SUMMARY"
+          head -c 60000 api-report.md > api-report-short.md
+
+      # Opens (or updates) a pull request only when something changed.
+      # Merging it = approving the saved changes and any proposed version upgrade.
+      - name: Open pull request for approval
+        id: pr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: apiwatch/weekly-check
+          delete-branch: true
+          title: ${{ steps.check.outputs.title }}
+          body-path: api-report-short.md
+          commit-message: "API watch: ${{ steps.check.outputs.title }}"
+          add-paths: |
+            snapshots/**
+            watchlists/**
+          labels: api-watch
+
+      - name: Post the report to the "Weekly API watch" issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{ steps.pr.outputs.pull-request-url }}
+        run: |
+          {
+            if [ -n "$PR_URL" ]; then echo "**Pull request to review:** $PR_URL"; echo; fi
+            cat api-report-short.md
+          } > comment.md
+          gh label create api-watch --color FBCA04 --description "Weekly API change check" --force
+          num=$(gh issue list --label api-watch --state open --json number,title \
+                  -q '[.[] | select(.title == "Weekly API watch")][0].number')
+          if [ -z "$num" ]; then
+            gh issue create --title "Weekly API watch" --label api-watch --body-file comment.md
+          else
+            gh issue comment "$num" --body-file comment.md
+          fi
+
+      - name: Mark the run red when action is needed
+        if: steps.check.outputs.action_needed == 'true'
+        run: |
+          echo "::error::Something your campaign tool uses has changed - see the report."
+          exit 1

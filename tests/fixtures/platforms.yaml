@@ -1,0 +1,15 @@
+platforms:
+  dv360:
+    title: DV360
+    type: google_discovery
+    api: displayvideo
+    entities: [Campaign]
+  meta:
+    title: Meta
+    type: meta_sdk
+    entities:
+      Campaign: AdAccount:campaigns
+  ttd:
+    title: TTD
+    mode: manual
+    manual_reason: no credentials

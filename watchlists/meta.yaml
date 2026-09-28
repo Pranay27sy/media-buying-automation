@@ -1,0 +1,40 @@
+# Fields our campaign tool sends to Meta (standard set - edit to match your tool).
+# Meta's public spec doesn't list allowed values, so only field names/types/mandatory are checked.
+platform: meta
+version_in_use: v26.0
+
+levels:
+  Campaign:
+    name:
+    objective:
+    status:
+    special_ad_categories:
+    buying_type:
+    bid_strategy:
+    daily_budget:
+    lifetime_budget:
+    spend_cap:
+    start_time:
+    stop_time:
+
+  AdSet:
+    name:
+    campaign_id:
+    status:
+    daily_budget:
+    lifetime_budget:
+    billing_event:
+    optimization_goal:
+    bid_strategy:
+    bid_amount:
+    targeting:
+    promoted_object:
+    start_time:
+    end_time:
+
+  Ad:
+    name:
+    adset_id:
+    creative:
+    status:
+    tracking_specs:

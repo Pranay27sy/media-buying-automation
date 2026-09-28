@@ -1,0 +1,9 @@
+# a comment that must survive version bumps
+platform: dv360
+version_in_use: v3
+
+levels:
+  Campaign:
+    displayName:
+    entityStatus: [ENTITY_STATUS_ACTIVE, ENTITY_STATUS_PAUSED]
+    campaignGoal.campaignGoalType:

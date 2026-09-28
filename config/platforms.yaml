@@ -1,0 +1,43 @@
+# Which platforms are checked and where their API descriptions come from.
+# ${NAME} is read from an environment variable / GitHub secret - never put passwords here.
+
+platforms:
+  dv360:
+    title: Google DV360
+    type: google_discovery        # public, no login needed
+    api: displayvideo
+    entities: [Campaign, InsertionOrder, LineItem]
+    links:
+      Release notes: https://developers.google.com/display-video/api/release-notes
+      Version retirement dates: https://developers.google.com/display-video/api/deprecations
+
+  meta:
+    title: Meta (Facebook / Instagram)
+    type: meta_sdk                # Meta's public SDK specs, no login needed
+    entities:
+      # level: "<object>:<endpoint>" = the form used to create it (POST /act_<id>/campaigns ...)
+      Campaign: AdAccount:campaigns
+      AdSet: AdAccount:adsets
+      Ad: AdAccount:ads
+    links:
+      Changelog: https://developers.facebook.com/docs/graph-api/changelog
+      Version retirement dates: https://developers.facebook.com/docs/graph-api/changelog/versions
+
+  ttd:
+    title: The Trade Desk
+    # TTD's docs need a partner login, so until API credentials exist this is a manual checklist.
+    # Once you have credentials: add GitHub secrets TTD_AUTH_TOKEN (or TTD_LOGIN + TTD_PASSWORD)
+    # and TTD_CAMPAIGN_ID / TTD_ADGROUP_ID, then change `mode: manual` to `mode: auto`.
+    mode: manual
+    manual_reason: TTD's API documentation needs a partner login and no credentials are set up yet
+    type: ttd_sample
+    version: v3
+    base_url: https://api.thetradedesk.com/v3
+    auth_token: ${TTD_AUTH_TOKEN}
+    login: ${TTD_LOGIN}
+    password: ${TTD_PASSWORD}
+    entities:
+      Campaign: {path: campaign, id: "${TTD_CAMPAIGN_ID}"}
+      AdGroup: {path: adgroup, id: "${TTD_ADGROUP_ID}"}
+    links:
+      Partner portal (API docs & release notes): https://partner.thetradedesk.com

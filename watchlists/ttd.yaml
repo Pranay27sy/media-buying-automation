@@ -1,0 +1,28 @@
+# Fields our campaign tool sends to The Trade Desk (standard set - edit to match your tool).
+# Not verified automatically yet (needs TTD API credentials) - used as the weekly manual checklist.
+platform: ttd
+version_in_use: v3
+
+manual_check: |
+  1. Log in to the TTD partner portal and open the API release notes / "API updates".
+  2. Look for anything released since last week that renames, removes or makes mandatory
+     one of the fields below.
+  3. If something affects you, tell whoever maintains the campaign tool.
+
+levels:
+  Campaign:
+    AdvertiserId:
+    CampaignName:
+    Budget.Amount:
+    Budget.CurrencyCode:
+    StartDate:
+    EndDate:
+    PacingMode:
+  AdGroup:
+    CampaignId:
+    AdGroupName:
+    IsEnabled:
+    RTBAttributes.BudgetSettings.Budget:
+    RTBAttributes.BaseBidCPM:
+    RTBAttributes.MaxBidCPM:
+    RTBAttributes.AudienceTargeting:
