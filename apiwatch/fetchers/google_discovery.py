@@ -3,7 +3,7 @@ Discovery documents for every version - no credentials needed."""
 from __future__ import annotations
 
 from ..schema import Snapshot, flatten_json_schema, version_key
-from .base import Fetcher, SkipPlatform
+from .base import Fetcher
 
 DIRECTORY = "https://www.googleapis.com/discovery/v1/apis?name={api}"
 
@@ -13,7 +13,8 @@ class GoogleDiscoveryFetcher(Fetcher):
         api = self.require("api")
         items = self.http.get_json(DIRECTORY.format(api=api)).get("items", [])
         if not items:
-            raise SkipPlatform(f"No Discovery entries for API `{api}`")
+            # Google renamed or withdrew the API: fail loudly rather than skip quietly.
+            raise RuntimeError(f"No Discovery entries for API `{api}`")
         return items
 
     def latest_version(self) -> str:
