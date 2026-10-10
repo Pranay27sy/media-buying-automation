@@ -88,5 +88,28 @@ def test_no_changes_writes_nothing(project, fixture_json):
 def test_fetch_errors_are_reported_not_raised(project, fixture_json):
     http = routes(fixture_json)
     http.routes["apiconfig.py"] = "nothing useful here"
-    meta = {r.platform: r for r in runner.run(project, http=http)}["meta"]
-    assert meta.status == "skipped" and "API version" in meta.message
+    results = runner.run(project, http=http)
+    meta = {r.platform: r for r in results}["meta"]
+    assert meta.status == "error" and "API version" in meta.message
+    assert meta.action_needed  # marks the weekly run red
+    assert "automatic check failed" in report.render(results)
+    assert report.title(results).endswith("action needed")
+
+
+def test_empty_discovery_directory_is_an_error(project, fixture_json):
+    http = routes(fixture_json)
+    http.routes["discovery/v1/apis"] = {"items": []}
+    dv = {r.platform: r for r in runner.run(project, http=http)}["dv360"]
+    assert dv.status == "error" and dv.action_needed
+
+
+def test_report_never_says_all_good_when_a_platform_was_skipped():
+    skipped = runner.PlatformResult("ttd", "The Trade Desk", "skipped", message="Set TTD_AUTH_TOKEN")
+    assert "not checked this week" in report.render([skipped])
+    assert "all good" not in report.render([skipped])
+    assert report.title([skipped]).endswith("some platforms not checked")
+
+
+def test_first_run_title_says_baseline(project, fixture_json):
+    results = runner.run(project, http=routes(fixture_json))
+    assert report.title(results).endswith("first check, baseline saved")

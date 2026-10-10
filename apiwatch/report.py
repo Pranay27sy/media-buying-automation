@@ -36,8 +36,12 @@ def title(results: list[PlatformResult], today: dt.date | None = None) -> str:
         what = "action needed"
     elif any(r.upgrade_proposed for r in results):
         what = "upgrade ready for approval"
+    elif any(r.status in ("error", "skipped") for r in results):
+        what = "some platforms not checked"
     elif any(r.changes for r in results):
         what = "changes found"
+    elif any(r.first_run for r in results):
+        what = "first check, baseline saved"
     else:
         what = "no changes"
     return f"API check {today.isoformat()}: {what}"
@@ -66,6 +70,8 @@ def _todo(results) -> list[str]:
     for r in results:
         if r.status == "error":
             items.append(f"**{r.title}**: the automatic check failed (`{r.message}`). Ask a developer to look at the workflow run.")
+        elif r.status == "skipped":
+            items.append(f"**{r.title}**: not checked this week ({r.message}).")
         elif r.action_needed:
             items.append(f"**{r.title}**: something you use changed - see the 🔴 items below. Your campaign tool needs updating.")
         elif r.upgrade_proposed:

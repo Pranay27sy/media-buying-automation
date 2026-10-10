@@ -15,7 +15,7 @@ from __future__ import annotations
 import re
 
 from ..schema import FieldSpec, Snapshot
-from .base import Fetcher, SkipPlatform
+from .base import Fetcher
 
 SDK_CONFIG = "https://raw.githubusercontent.com/facebook/facebook-python-business-sdk/main/facebook_business/apiconfig.py"
 SPECS = "https://raw.githubusercontent.com/facebook/facebook-business-sdk-codegen/main/api_specs/specs"
@@ -28,7 +28,8 @@ class MetaSDKFetcher(Fetcher):
         text = self.http.get_text(self.cfg.get("sdk_config_url", SDK_CONFIG))
         m = re.search(r"['\"]API_VERSION['\"]\s*:\s*['\"](v\d+\.\d+)['\"]", text)
         if not m:
-            raise SkipPlatform("Could not read the API version from Meta's SDK config")
+            # The file changed shape on Meta's side: fail loudly rather than skip quietly.
+            raise RuntimeError("Could not read the API version from Meta's SDK config")
         return m.group(1)
 
     def fetch(self, version: str) -> Snapshot:
