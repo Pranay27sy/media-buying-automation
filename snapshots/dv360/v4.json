@@ -1,7 +1,7 @@
 {
   "platform": "dv360",
   "version": "v4",
-  "revision": "20260924",
+  "revision": "20261012",
   "source": "https://displayvideo.googleapis.com/$discovery/rest?version=v4",
   "entities": {
     "Campaign": {
@@ -932,7 +932,8 @@
           "THIRD_PARTY_VENDOR_ISPOT_TV",
           "THIRD_PARTY_VENDOR_INTAGE",
           "THIRD_PARTY_VENDOR_MACROMILL",
-          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH",
+          "THIRD_PARTY_VENDOR_AQUILA"
         ]
       },
       "demandGenSettings.thirdPartyMeasurementConfigs.brandSafetyVendorConfigs": {
@@ -964,7 +965,8 @@
           "THIRD_PARTY_VENDOR_ISPOT_TV",
           "THIRD_PARTY_VENDOR_INTAGE",
           "THIRD_PARTY_VENDOR_MACROMILL",
-          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH",
+          "THIRD_PARTY_VENDOR_AQUILA"
         ]
       },
       "demandGenSettings.thirdPartyMeasurementConfigs.reachVendorConfigs": {
@@ -996,7 +998,8 @@
           "THIRD_PARTY_VENDOR_ISPOT_TV",
           "THIRD_PARTY_VENDOR_INTAGE",
           "THIRD_PARTY_VENDOR_MACROMILL",
-          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH",
+          "THIRD_PARTY_VENDOR_AQUILA"
         ]
       },
       "demandGenSettings.thirdPartyMeasurementConfigs.viewabilityVendorConfigs": {
@@ -1028,7 +1031,8 @@
           "THIRD_PARTY_VENDOR_ISPOT_TV",
           "THIRD_PARTY_VENDOR_INTAGE",
           "THIRD_PARTY_VENDOR_MACROMILL",
-          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH",
+          "THIRD_PARTY_VENDOR_AQUILA"
         ]
       },
       "displayName": {
@@ -1368,8 +1372,7 @@
         ]
       },
       "youtubeAndPartnersSettings": {
-        "type": "object",
-        "read_only": true
+        "type": "object"
       },
       "youtubeAndPartnersSettings.contentCategory": {
         "type": "string",
@@ -1468,7 +1471,8 @@
           "THIRD_PARTY_VENDOR_ISPOT_TV",
           "THIRD_PARTY_VENDOR_INTAGE",
           "THIRD_PARTY_VENDOR_MACROMILL",
-          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH",
+          "THIRD_PARTY_VENDOR_AQUILA"
         ]
       },
       "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.brandSafetyVendorConfigs": {
@@ -1500,7 +1504,8 @@
           "THIRD_PARTY_VENDOR_ISPOT_TV",
           "THIRD_PARTY_VENDOR_INTAGE",
           "THIRD_PARTY_VENDOR_MACROMILL",
-          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH",
+          "THIRD_PARTY_VENDOR_AQUILA"
         ]
       },
       "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.reachVendorConfigs": {
@@ -1532,7 +1537,8 @@
           "THIRD_PARTY_VENDOR_ISPOT_TV",
           "THIRD_PARTY_VENDOR_INTAGE",
           "THIRD_PARTY_VENDOR_MACROMILL",
-          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH",
+          "THIRD_PARTY_VENDOR_AQUILA"
         ]
       },
       "youtubeAndPartnersSettings.thirdPartyMeasurementConfigs.viewabilityVendorConfigs": {
@@ -1564,7 +1570,8 @@
           "THIRD_PARTY_VENDOR_ISPOT_TV",
           "THIRD_PARTY_VENDOR_INTAGE",
           "THIRD_PARTY_VENDOR_MACROMILL",
-          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH"
+          "THIRD_PARTY_VENDOR_VIDEO_RESEARCH",
+          "THIRD_PARTY_VENDOR_AQUILA"
         ]
       },
       "youtubeAndPartnersSettings.videoAdInventoryControl": {
