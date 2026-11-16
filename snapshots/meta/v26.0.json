@@ -114,9 +114,6 @@
       "billing_event": {
         "type": "adaccountadsets_billing_event_enum_param"
       },
-      "brand_safety_config": {
-        "type": "map"
-      },
       "budget_schedule_specs": {
         "type": "list<Object>"
       },
@@ -343,6 +340,9 @@
         "type": "bool"
       },
       "is_meta_moment_maker_enabled": {
+        "type": "bool"
+      },
+      "is_pca_unified": {
         "type": "bool"
       },
       "is_reels_trending_ads_enabled": {
