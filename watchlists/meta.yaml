@@ -1,7 +1,7 @@
 # Fields our campaign tool sends to Meta (standard set - edit to match your tool).
 # Meta's public spec doesn't list allowed values, so only field names/types/mandatory are checked.
 platform: meta
-version_in_use: v26.0
+version_in_use: v27.0
 
 levels:
   Campaign:
