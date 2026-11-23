@@ -1,7 +1,7 @@
 # Fields our campaign tool sends to DV360 (standard set - edit to match your tool).
 # A field with a list after it = we also check those values are still allowed.
 platform: dv360
-version_in_use: v4
+version_in_use: v5
 
 levels:
   Campaign:
